@@ -1,0 +1,20 @@
+core config:
+  dbuser: root
+  dbpass: root
+  dbname: wordpress
+  dbhost: 10.0.0.1:3306
+  dbprefix: wp_
+  extra-php: |
+    define('WP_DEBUG', false);
+    define('WP_DEBUG_DISPLAY', false);
+    define('WP_DEBUG_LOG', false);
+    define('COOKIE_DOMAIN','');
+
+core multisite-install:
+  url: www.mystatlesswp.com
+  title: wordpress
+  admin_user: root
+  admin_password: root
+  admin_email: root@gmail.com
+  skip-email: true
+  subdomains: true
