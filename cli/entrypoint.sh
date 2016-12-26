@@ -19,7 +19,7 @@ if [ -e /var/config/wp-config.php ]; then
 
   if [ "$SEARCH_REPLACE" != false ]; then
     printf "=> Replacing URLs... "
-    REPLACEMENTS=$(sudo -u www-data wp search-replace "$BEFORE_URL" "$AFTER_URL" --network --skip-columns=guid | grep replacement)
+    REPLACEMENTS=$(wp search-replace "$BEFORE_URL" "$AFTER_URL" --network --skip-columns=guid | grep replacement)
     echo -ne "$REPLACEMENTS\n"
   fi
 
