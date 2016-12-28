@@ -1,4 +1,4 @@
-FROM wp-statless-base:wp-4.6.1
+FROM wp-statless-base:wp-4.7
 
 # install nginx
 RUN apt-get update && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
