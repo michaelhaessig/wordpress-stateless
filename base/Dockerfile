@@ -1,4 +1,4 @@
-FROM php:7.0.12-fpm
+FROM php:7.1-fpm
 
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -y sudo wget unzip vim mysql-client libpng12-dev libjpeg-dev && rm -rf /var/lib/apt/lists/* \
@@ -18,8 +18,8 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 # wordpress version from : https://github.com/docker-library/wordpress/blob/master/php7.0/fpm/Dockerfile
-ENV WORDPRESS_VERSION 4.7
-ENV WORDPRESS_SHA1 1e14144c4db71421dc4ed22f94c3914dfc3b7020
+ENV WORDPRESS_VERSION 4.7.1
+ENV WORDPRESS_SHA1 8e56ba56c10a3f245c616b13e46bd996f63793d6
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \

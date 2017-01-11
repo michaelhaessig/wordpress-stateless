@@ -23,6 +23,7 @@ fi
 
 if [ "$WORDPRESS_DEV" == "true" ]; then
   printf "=> Disabling PHP OPCACHE \n"
+  # php fpm cache gets triggered by opcache.enable_cli=1
   rm /usr/local/etc/php/conf.d/opcache-recommended.ini || true
 
   sed "/WP_DEBUG/s/'[^']*'/'true'/2" -i wp-config.php
