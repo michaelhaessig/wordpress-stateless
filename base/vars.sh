@@ -21,6 +21,10 @@ if [ "$WORDPRESS_DB_HOST" ]; then
   sed "/DB_HOST/s/'[^']*'/'$WORDPRESS_DB_HOST'/2" -i wp-config.php
 fi
 
+if [ "$WORDPRESS_CURRENT_HOST" ]; then
+  sed "/DOMAIN_CURRENT_SITE/s/'[^']*'/'$WORDPRESS_CURRENT_HOST'/2" -i wp-config.php
+fi
+
 if [ "$WORDPRESS_DEV" == "true" ]; then
   printf "=> Disabling PHP OPCACHE \n"
   # php fpm cache gets triggered by opcache.enable_cli=1
