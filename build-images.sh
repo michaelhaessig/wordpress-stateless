@@ -20,12 +20,10 @@ docker build -t $IMAGE_BASE:$VERSION .
 
 cd ../cli
 sed "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" -i Dockerfile
-IMAGE=wp-statless-cli
 docker build -t $IMAGE_CLI:$VERSION .
 
 cd ../nginx
 sed "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" -i Dockerfile
-IMAGE=wp-statless-cli
 docker build -t $IMAGE_NGINX:$VERSION .
 
 echo "Done"

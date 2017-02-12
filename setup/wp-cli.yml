@@ -2,7 +2,7 @@ core config:
   dbuser: root
   dbpass: root
   dbname: wordpress
-  dbhost: 10.0.0.1:3306
+  dbhost: 172.17.0.1:3306
   dbprefix: wp_
   extra-php: |
     define('WP_DEBUG', false);
@@ -11,7 +11,7 @@ core config:
     define('COOKIE_DOMAIN','');
 
 core multisite-install:
-  url: www.mystatlesswp.com
+  url: www.mywordpress.local
   title: wordpress
   admin_user: root
   admin_password: root

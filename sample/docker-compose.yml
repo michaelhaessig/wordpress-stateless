@@ -1,0 +1,52 @@
+
+version: '2'
+services:
+# Wordpress Image
+  wordpress:
+    build:
+      context: . # dockerfile acccess to full folder
+      dockerfile: ./Dockerfile
+    image: my-wordpress # tag as
+    links:
+      - db:mysql
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+       # - ./wp-content/uploads:/var/www/html/wp-content/uploads  # Save Media uploads
+       - ./plugins/my-plugin:/var/www/html/wp-content/plugins/my-plugin # Plugin development
+       - ./themes/my-theme:/var/www/html/wp-content/themes/my-theme   # Blog Theme development
+    environment:
+       WORDPRESS_DEV: "true"
+       WORDPRESS_DB_HOST: mysql
+       WORDPRESS_DB_USER: root
+       WORDPRESS_DB_PASSWORD: root
+       WORDPRESS_DB_NAME: wordpress
+       WORDPRESS_CURRENT_HOST: www.mywordpress.local
+
+
+# Dev Database
+  db:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - my-wordpress-db-new:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+# Dev Mysql Admin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    ports:
+      - 8090:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: root
+
+
+# Stored Named Data Volumes ( default /var/lib/docker/volumes/ )
+# List volumes via docker volume ls
+volumes:
+ my-wordpress-db-new : {}

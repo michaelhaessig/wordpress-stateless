@@ -19,6 +19,6 @@ wp-statless-cli:wp
 -e WORDPRESS_DB_HOST='10.0.0.1:3306' \
 -e WORDPRESS_DB_USER='root' \
 -e WORDPRESS_DB_PASSWORD='root' \
--e WORDPRESS_DB_NAME='mikiwordpress' \
+-e WORDPRESS_DB_NAME='wordpress' \
 -v /config:/var/config \
 wp-statless-cli
