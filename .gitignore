@@ -1,0 +1,27 @@
+
+# OS Files #
+.DS_Store
+.directory
+
+
+######################
+# OSX
+######################
+
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+#####################
+# Idea
+#####################
+.idea/
+*.iml
+*.iws
