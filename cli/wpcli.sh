@@ -2,4 +2,4 @@
 set -e
 
 # wrap wpcli command
-sudo -u www-data wpcli $@
+sudo -u www-data wpcli "$@"
