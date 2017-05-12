@@ -23,7 +23,7 @@ sed "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" -i Dockerfile
 docker build -t $IMAGE_CLI:$VERSION .
 
 cd ../nginx
-sed "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" -i Dockerfile
+sed "s/$IMAGE_CLI:.*/$IMAGE_CLI:$VERSION/" -i Dockerfile
 docker build -t $IMAGE_NGINX:$VERSION .
 
 echo "Done"
