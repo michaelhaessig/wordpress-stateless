@@ -2,7 +2,7 @@
 # Wordpress Stateless Base
 
 ## Build Container
-> docker build -t wp-statless-base:wp-<version> .
+> docker build -t wp-stateless-base:wp-<version> .
 
 ## Run Container
 > docker run --name wp_stateless --rm \

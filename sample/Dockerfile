@@ -1,4 +1,4 @@
-FROM wp-statless-nginx:wp-4.7.2
+FROM wp-stateless-nginx:wp-4.7.2
 
 ##############################################################################################
 # CUSTOM PHP CONFIG

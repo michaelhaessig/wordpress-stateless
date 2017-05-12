@@ -10,9 +10,9 @@ VERSION="wp-$1"
 
 echo "Building Version: $VERSION"
 
-IMAGE_BASE=wp-statless-base
-IMAGE_CLI=wp-statless-cli
-IMAGE_NGINX=wp-statless-nginx
+IMAGE_BASE=wp-stateless-base
+IMAGE_CLI=wp-stateless-cli
+IMAGE_NGINX=wp-stateless-nginx
 
 cd base
 
