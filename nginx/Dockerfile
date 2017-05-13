@@ -1,4 +1,4 @@
-FROM wp-stateless-cli:wp-4.7.4-1
+FROM wp-stateless-cli:wp-4.7.4-3
 
 # install nginx
 RUN apt-get update && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
@@ -19,4 +19,6 @@ ADD restrictions.conf /etc/nginx/global/restrictions.conf
 ADD entrypoint.sh /entrypoint_nginx.sh
 RUN chmod +x /entrypoint_nginx.sh
 
+# reset entrypoint from parent cli
+ENTRYPOINT []
 CMD ["/entrypoint_nginx.sh"]

@@ -1,8 +1,12 @@
-FROM wp-stateless-base:wp-4.7.4-1
+FROM wp-stateless-base:wp-4.7.4-3
 
 ##############################################################################################
 # WORDPRESS CLI SETUP
 ##############################################################################################
+
+# install less for wp-cli support , and xterm for terminal support
+RUN apt-get update && apt-get install -y less
+ENV TERM=xterm
 
 # install wp-cli
 RUN curl -o /usr/local/bin/wpcli https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
