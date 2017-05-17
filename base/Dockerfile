@@ -18,8 +18,8 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 # wordpress version from : https://github.com/docker-library/wordpress/blob/master/php7.0/fpm/Dockerfile
-ENV WORDPRESS_VERSION 4.7.4
-ENV WORDPRESS_SHA1 153592ccbb838cafa1220de9174ec965df2e9e1a
+ENV WORDPRESS_VERSION 4.7.5
+ENV WORDPRESS_SHA1 fbe0ee1d9010265be200fe50b86f341587187302
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \
