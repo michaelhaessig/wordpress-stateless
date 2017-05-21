@@ -11,4 +11,4 @@ Used to initialize a fresh Database and generate a wp-config.php file.
 -v $(pwd)/output:/var/config \
 -v $(pwd)/wp-cli.yml:/var/www/html/wp-cli.yml \
 -v $(pwd)/setup.sh:/var/www/html/setup.sh \
-wp-stateless-cli:wp-4.7.2 /var/www/html/setup.sh
+wp-stateless-cli:wp-4.7.5 /var/www/html/setup.sh
