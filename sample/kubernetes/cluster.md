@@ -11,7 +11,7 @@ For easier command line use, we set our desired compute zone. This dictates in w
 - Create new cluster
 
 To save costs we do provide some additional settings like image type and node count.
-> gcloud container clusters create example-cluster --zone europe-west1-d  --machine-type g1-small --num-nodes 2 --no-enable-cloud-endpoints --no-enable-cloud-monitoring"
+> gcloud container clusters create example-cluster --machine-type g1-small --num-nodes 2 --no-enable-cloud-endpoints --no-enable-cloud-monitoring
 
 - Fetch credentials to allow to control the cluster via kubectl command line tool
 > gcloud container clusters get-credentials example-cluster
