@@ -34,7 +34,7 @@ if [ "$WORDPRESS_DEV" == "true" ]; then
   sed "/'WP_DEBUG'/s/false/true/g" -i wp-config.php
   sed "/'WP_DEBUG_LOG'/s/false/true/g" -i wp-config.php
   # show debug/error output
-  sed "/'WP_DEBUG_DISPLAY'/s/true/false/g" -i wp-config.php
+  sed "/'WP_DEBUG_DISPLAY'/s/false/true/g" -i wp-config.php
 else
   sed "/'WP_DEBUG'/s/false/true/g" -i wp-config.php
   sed "/'WP_DEBUG_LOG'/s/false/true/g" -i wp-config.php
