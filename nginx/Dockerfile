@@ -1,4 +1,4 @@
-FROM wp-stateless-cli:wp-4.8.1
+FROM wp-stateless-cli:wp-4.8.2
 
 # install nginx
 RUN apt-get update && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
