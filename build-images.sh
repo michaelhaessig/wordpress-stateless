@@ -19,11 +19,11 @@ cd base
 docker build -t $IMAGE_BASE:$VERSION .
 
 cd ../cli
-sed "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" -i Dockerfile
+sed -i "" "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" Dockerfile
 docker build -t $IMAGE_CLI:$VERSION .
 
 cd ../nginx
-sed "s/$IMAGE_CLI:.*/$IMAGE_CLI:$VERSION/" -i Dockerfile
+sed -i "" "s/$IMAGE_CLI:.*/$IMAGE_CLI:$VERSION/" Dockerfile
 docker build -t $IMAGE_NGINX:$VERSION .
 
 echo "Done"
