@@ -1,4 +1,4 @@
-FROM wp-stateless-base:wp-4.8.3
+FROM wp-stateless-base:wp-4.9
 
 ##############################################################################################
 # WORDPRESS CLI SETUP
