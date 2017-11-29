@@ -18,12 +18,14 @@ cd base
 
 docker build -t $IMAGE_BASE:$VERSION .
 
+# sed needs backup file to work on osx
+
 cd ../cli
-sed -i "" "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" Dockerfile
+sed -i'.bak' "s/$IMAGE_BASE:.*/$IMAGE_BASE:$VERSION/" Dockerfile
 docker build -t $IMAGE_CLI:$VERSION .
 
 cd ../nginx
-sed -i "" "s/$IMAGE_CLI:.*/$IMAGE_CLI:$VERSION/" Dockerfile
+sed -i'.bak' "s/$IMAGE_CLI:.*/$IMAGE_CLI:$VERSION/" Dockerfile
 docker build -t $IMAGE_NGINX:$VERSION .
 
 echo "Done"
