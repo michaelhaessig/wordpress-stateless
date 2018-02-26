@@ -31,7 +31,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - my-wordpress-db-new:/var/lib/mysql1
+      - my-wordpress-db-new:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
 # Dev Mysql Admin
