@@ -29,7 +29,7 @@ if [ "$1" ]; then
         # get the filename to extract ( handles github download where the filename is master.zip )
         plugindirname="${download##*/}"
         # download and unzip
-        wget $download && unzip $plugindirname -d /var/www/html/wp-content/plugins/
+        wget $download && unzip -o $plugindirname -d /var/www/html/wp-content/plugins/
 
         # delete zip file
         rm $plugindirname
@@ -45,7 +45,7 @@ if [ "$1" ]; then
          download="$download.$version.zip"
        fi
        # download and unzip
-       wget https://downloads.wordpress.org/plugin/$download && unzip $download -d /var/www/html/wp-content/plugins/
+       wget https://downloads.wordpress.org/plugin/$download && unzip -o $download -d /var/www/html/wp-content/plugins/
 
        # delete zip file
        rm $download
